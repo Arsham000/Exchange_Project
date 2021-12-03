@@ -82,6 +82,7 @@ const useStyles = makeStyles(() => ({
     borderRadius: "12px !important",
     padding: "0.5rem",
     height: "100%",
+    color: "#fff",
   },
   moreOptionMenu: {
     top: "48px !important",

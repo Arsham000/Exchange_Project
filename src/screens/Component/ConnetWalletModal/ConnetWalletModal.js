@@ -12,11 +12,7 @@ const ConnetWalletModal = ({ isOpen, onClose }) => {
         <Paper className={classes.modal}>
           <div className={classes.topPart}>
             <div>
-              <Typography
-                variant="67"
-                color="primary"
-                className={classes.title}
-              >
+              <Typography color="primary" className={classes.title}>
                 Connect a wallet
               </Typography>
             </div>

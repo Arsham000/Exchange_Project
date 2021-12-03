@@ -5,9 +5,10 @@ const useStyles = makeStyles(() => ({
     flexFlow: "column nowrap",
     position: "relative",
     borderRadius: 20,
+    width: "100%",
     backgroundColor: "rgb(33,36,41)",
     zIndex: 1,
-    width: "initial",
+    // width: "initial",
     border: "1px solid rgb(44,47,54)",
   },
   partsContianer: {
@@ -53,22 +54,6 @@ const useStyles = makeStyles(() => ({
       backgroundColor: "rgb(25,27,25)",
     },
   },
-  image: {
-    width: 24,
-    height: 24,
-  },
-  showPrice: {
-    marginTop: "-1rem",
-    display: "flex",
-    flexFlow: "row nowarp",
-    alignItems: "center",
-    color: "#fff",
-    fontSize: "0.75rem",
-    lineHeight: "1rem",
-    padding: "0 1rem 1rem",
-    textAlign: "right",
-    flexDirection: "row-reverse",
-  },
   buttonNotSelected: {
     visibility: "visible",
     alignItems: "center",
@@ -87,6 +72,22 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       backgroundColor: "rgb(11,114,255)",
     },
+  },
+  image: {
+    width: 24,
+    height: 24,
+  },
+  showPrice: {
+    marginTop: "-1rem",
+    display: "flex",
+    flexFlow: "row nowarp",
+    alignItems: "center",
+    color: "#fff",
+    fontSize: "0.75rem",
+    lineHeight: "1rem",
+    padding: "0 1rem 1rem",
+    textAlign: "right",
+    flexDirection: "row-reverse",
   },
 }));
 export default useStyles;
