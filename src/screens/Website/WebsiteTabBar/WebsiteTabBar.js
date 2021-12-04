@@ -1,6 +1,7 @@
 import { Button, Typography } from "@material-ui/core";
 import AppIcon from "@material-ui/icons/Polymer";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import useStyles from "./styles/WebsiteTabBar.styles";
 
 const WebsiteTabBar = () => {
@@ -18,7 +19,7 @@ const WebsiteTabBar = () => {
           <NavPart name="Developers" />
           <NavPart name="Blog" />
           <NavPart name="FAQ" />
-          <a href="/launch/swap">
+          <a href="/launch/#/swap">
             <Button variant="contained" className={classes.button}>
               Launch App
             </Button>
@@ -33,15 +34,15 @@ const NavPart = ({ name }) => {
   const history = useHistory();
 
   return (
-    <a
-      href={`/website/${"mainpage"}`}
+    <Link
+      to={`/website/${"mainpage"}`}
       className={[
         classes.tabPart,
         history.location.pathname.includes(name) ? classes.activeTab : "",
       ].join(" ")}
     >
       <Typography>{name}</Typography>
-    </a>
+    </Link>
   );
 };
 

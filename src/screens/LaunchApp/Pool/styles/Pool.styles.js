@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   pageContianer: {
     display: "flex",
     padding: "120px 16px 0",
@@ -28,6 +28,19 @@ const useStyles = makeStyles(() => ({
   },
   title: {
     color: "#fff",
+  },
+  buttonContianer: {
+    [theme.breakpoints.down("sm")]: {
+      direction: "rtl",
+      display: "grid",
+      gridTemplateColumns: "2fr 5fr",
+      // display: "flex",
+      flexDirection: "row",
+      // flex: "2 5",
+      gap: 20,
+      width: "100%",
+      marginTop: 10,
+    },
   },
   moreOption: {
     backgroundColor: "rgb(25,27,31)",

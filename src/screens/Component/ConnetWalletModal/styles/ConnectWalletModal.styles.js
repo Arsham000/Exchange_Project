@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   modal: {
     margin: "auto",
     marginTop: "10vh",
@@ -11,10 +11,16 @@ const useStyles = makeStyles(() => ({
     overflow: "hidden auto",
     alignSelf: "center",
     maxWidth: 420,
-    maxHeight: "90hv",
+    maxHeight: "90vh",
     display: "flex",
     flexDirection: "column",
     borderRadius: "20px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      position: "absolute",
+      bottom: 0,
+      // maxHeight: "60vh",
+    },
   },
   topPart: {
     display: "flex",

@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -8,6 +8,10 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     flex: "1 1 0",
     zIndex: 1,
+    [theme.breakpoints.down("sm")]: {
+      margin: 10,
+      marginBottom: 80,
+    },
   },
   header: {
     maxWidth: 640,
@@ -44,6 +48,9 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      width: "calc(100% + 20px)",
+    },
   },
   proposalsButton: {
     backgroundColor: "rgb(33,114,229)",
@@ -72,6 +79,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: 400,
     fontSize: 14,
     color: "rgb(143,150,172)",
+    textAlign: "center",
   },
 }));
 export default useStyles;

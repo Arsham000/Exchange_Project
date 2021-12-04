@@ -5,7 +5,7 @@ const SelectTokenModalCommonToken = ({ name, imgSrc, onClick }) => {
   return (
     <div className={classes.root} onClick={onClick}>
       <img src={imgSrc} alt={name} className={classes.image} />
-      <Typography variant="inherit">{name}</Typography>
+      <Typography>{name}</Typography>
     </div>
   );
 };

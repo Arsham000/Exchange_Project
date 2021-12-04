@@ -6,12 +6,8 @@ const SelectTokenModalToken = ({ name, imgSrc, onClick, fullname }) => {
     <div className={classes.root} onClick={onClick}>
       <img src={imgSrc} alt={name} className={classes.image} />
       <div className={classes.nameContianer}>
-        <Typography variant="none" className={classes.name}>
-          {name}
-        </Typography>
-        <Typography variant="none" className={classes.fullname}>
-          {fullname}
-        </Typography>
+        <Typography className={classes.name}>{name}</Typography>
+        <Typography className={classes.fullname}>{fullname}</Typography>
       </div>
     </div>
   );

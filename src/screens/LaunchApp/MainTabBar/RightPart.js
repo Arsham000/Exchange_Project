@@ -1,6 +1,13 @@
 import useStyles from "./styles/RightPart.styles";
 import imgSrc from "../../../assets/img/eter.png";
-import { Button, Menu, MenuItem, Typography } from "@material-ui/core";
+import {
+  Button,
+  Menu,
+  MenuItem,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
 import MoreOptionIcon from "@material-ui/icons/MoreHoriz";
 import { useState } from "react";
 import ConnetWalletModal from "../../Component/ConnetWalletModal/ConnetWalletModal";
@@ -15,14 +22,18 @@ const RightPart = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div className={classes.root}>
       <div className={classes.eterContianer}>
         <div className={classes.eter}>
           <img src={imgSrc} alt="eter" className={classes.image} />
-          <Typography color="primary" className={classes.eterName}>
-            Ethereum
-          </Typography>
+          {!isSmallScreen && (
+            <Typography color="primary" className={classes.eterName}>
+              Ethereum
+            </Typography>
+          )}
         </div>
       </div>
       <div className={classes.connectWallatButtonContianer}>

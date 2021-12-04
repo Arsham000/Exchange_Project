@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexFlow: "column nowrap",
@@ -52,6 +52,9 @@ const useStyles = makeStyles(() => ({
     gap: 20,
     "&:hover": {
       backgroundColor: "rgb(25,27,25)",
+    },
+    [theme.breakpoints.down("sm")]: {
+      flex: 3,
     },
   },
   buttonNotSelected: {

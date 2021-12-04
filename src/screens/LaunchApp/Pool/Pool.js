@@ -1,4 +1,11 @@
-import { Button, Menu, MenuItem, Typography } from "@material-ui/core";
+import {
+  Button,
+  Menu,
+  MenuItem,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
 import useStyles from "./styles/Pool.styles";
 import InboxIcon from "@material-ui/icons/Inbox";
 import { useState } from "react";
@@ -15,23 +22,38 @@ const Pool = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <div className={classes.pageContianer}>
       <div className={classes.root}>
-        <div className={classes.tapPart}>
+        {isSmallScreen && (
           <div>
             <Typography className={classes.title}>Pools Overview</Typography>
           </div>
-          <div>
+        )}
+        <div className={classes.tapPart}>
+          {!isSmallScreen && (
+            <div>
+              <Typography className={classes.title}>Pools Overview</Typography>
+            </div>
+          )}
+          <div className={classes.buttonContianer}>
             <Button
               variant="contained"
               className={classes.moreOption}
               onClick={handleClick}
+              fullWidth={isSmallScreen}
             >
               More
             </Button>
 
-            <Button variant="contained" className={classes.newPostion}>
+            <Button
+              variant="contained"
+              className={classes.newPostion}
+              fullWidth={isSmallScreen}
+            >
               + New Position
             </Button>
             <div>
@@ -62,32 +84,34 @@ const Pool = () => {
             </div>
           </div>
         </div>
-        <div className={classes.bodyPart}>
-          <div className={classes.learnMore}>
-            <div className={classes.learnMoreTextContianer}>
-              <Typography className={classes.learnMoreTitle}>
-                Learn about providing liquidity
-              </Typography>
+        {!isSmallScreen && (
+          <div className={classes.bodyPart}>
+            <div className={classes.learnMore}>
+              <div className={classes.learnMoreTextContianer}>
+                <Typography className={classes.learnMoreTitle}>
+                  Learn about providing liquidity
+                </Typography>
+              </div>
+              <div className={classes.learnMoreTextContianer}>
+                <Typography className={classes.learnMoreDescription}>
+                  Check out our v3 LP walkthrough and migration guides.
+                </Typography>
+              </div>
             </div>
-            <div className={classes.learnMoreTextContianer}>
-              <Typography className={classes.learnMoreDescription}>
-                Check out our v3 LP walkthrough and migration guides.
-              </Typography>
+            <div className={classes.toolTip}>
+              <div className={classes.learnMoreTextContianer}>
+                <Typography className={classes.learnMoreTitle}>
+                  Top pools
+                </Typography>
+              </div>
+              <div className={classes.learnMoreTextContianer}>
+                <Typography className={classes.learnMoreDescription}>
+                  Explore popular pools on Uniswap Analytics.
+                </Typography>
+              </div>
             </div>
           </div>
-          <div className={classes.toolTip}>
-            <div className={classes.learnMoreTextContianer}>
-              <Typography className={classes.learnMoreTitle}>
-                Top pools
-              </Typography>
-            </div>
-            <div className={classes.learnMoreTextContianer}>
-              <Typography className={classes.learnMoreDescription}>
-                Explore popular pools on Uniswap Analytics.
-              </Typography>
-            </div>
-          </div>
-        </div>
+        )}
         <div className={classes.bottomPartContianer}>
           <div className={classes.bottomPart}>
             <div>

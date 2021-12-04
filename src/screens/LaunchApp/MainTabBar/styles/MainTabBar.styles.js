@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexFlow: "row nowrap",
@@ -28,11 +28,27 @@ const useStyles = makeStyles(() => ({
     backgroundPosition: "0 0",
     backgroundSize: "100% 200%",
     boxShadow: "transparent 0 0 0 1px",
+    [theme.breakpoints.down("sm")]: {
+      backgroundImage: "linear-gradient(transparent 50%, rgb(255, 27, 31) 50%)",
+      gridTemplateColumns: "48px 1fr",
+
+      transition: "background-position 0.1s ease 0s, box-shadow 0.1s ease 0s",
+      backgroundBlendMode: "hard-light",
+      backgroundColor: "rgb(33,36,41)",
+    },
   },
   tabListContianer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.down("sm")]: {
+      position: "fixed",
+      margin: " 0 auto",
+      bottom: 10,
+      left: "50%",
+      width: "fit-content",
+      transform: " translate(-50%, 0)",
+    },
   },
 }));
 export default useStyles;

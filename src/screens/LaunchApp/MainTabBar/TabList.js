@@ -1,31 +1,35 @@
 import { Typography } from "@material-ui/core";
-import React from "react";
-import { useHistory } from "react-router";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import useStyles from "./styles/TabList.styles";
 
 const TabList = () => {
   const classes = useStyles();
+  const [active, setactive] = useState(0);
   return (
     <div className={classes.root}>
       {tabsText.map((item, index) => (
-        <Tab name={item} key={item} />
+        <Tab
+          name={item}
+          key={item}
+          isActive={index === active}
+          setactive={setactive}
+          index={index}
+        />
       ))}
     </div>
   );
 };
-function Tab({ name }) {
+function Tab({ name, isActive, setactive, index }) {
   const classes = useStyles();
-  const history = useHistory();
   return (
-    <a
-      className={[
-        classes.tab,
-        history.location.pathname.includes(name) ? classes.activeTab : "",
-      ].join(" ")}
-      href={`/launch/${name}`}
+    <Link
+      className={[classes.tab, isActive ? classes.activeTab : ""].join(" ")}
+      to={`/launch/${name}`}
+      onClick={() => setactive(index)}
     >
       <Typography>{name}</Typography>
-    </a>
+    </Link>
   );
 }
 export default TabList;

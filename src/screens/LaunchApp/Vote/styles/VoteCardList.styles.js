@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 640,
     padding: "0.75rem 1rem",
@@ -20,6 +20,9 @@ const useStyles = makeStyles(() => ({
   number: {
     opacity: 0.6,
     flex: "0 0 40px",
+    [theme.breakpoints.down("sm")]: {
+      marginRight: 10,
+    },
   },
   description: {
     fontWeight: 600,

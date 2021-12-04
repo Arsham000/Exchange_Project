@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Typography, Button } from "@material-ui/core";
 import useStyles from "./styles/ConnetWalletModalButton.styles";
 const ConnetWalletModalButton = ({ text, Icon }) => {
@@ -11,7 +12,7 @@ const ConnetWalletModalButton = ({ text, Icon }) => {
       </div>
       {Icon && (
         <div>
-          <Icon />
+          <img />
         </div>
       )}
     </Button>

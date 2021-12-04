@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   modal: {
     margin: "auto",
     marginTop: "10vh",
@@ -17,13 +17,24 @@ const useStyles = makeStyles(() => ({
     borderRadius: "20px",
     paddingLeft: "1rem",
     paddingRight: "1rem",
+    [theme.breakpoints.down("sm")]: {
+      // maxWidth: "100%",
+      width: "100%",
+      paddingRight: 0,
+      paddingLeft: 0,
+      position: "absolute",
+      // alignItems: "center",
+      flex: 1,
+      justifyContent: "space-between",
+      bottom: 0,
+    },
   },
   topPart: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    flex: 1,
+    // flex: 1,
     // marginRight: "1rem",
   },
   closeButton: {
@@ -31,15 +42,24 @@ const useStyles = makeStyles(() => ({
     justifyContent: "flex-end",
     alignItems: "center",
     marginRight: "-0.5rem",
+    [theme.breakpoints.down("sm")]: {
+      marginRight: "1rem",
+    },
   },
   title: {
     fontWeight: "bold",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "1rem",
+    },
   },
   searchInputContiner: {
     // display: "flex",
     // flex: 1,
-    // marginLeft:'1rem',
+    marginLeft: "1rem",
     marginRight: "1rem",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 20,
+    },
   },
   searchInput: {
     "& fieldset": {
@@ -81,6 +101,12 @@ const useStyles = makeStyles(() => ({
     willChange: "transform",
     direction: "ltr",
     borderTop: "1px solid #22252A",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+      // height: "10%",
+      maxHeight: "60%",
+      height: 350,
+    },
   },
   bottomPart: {
     width: "calc(100% + 2rem)",
@@ -94,6 +120,11 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     justifyContent: "center",
     marginLeft: "-1rem",
+    [theme.breakpoints.down("sm")]: {
+      // width: "100%",
+      paddingBottom: 10,
+      paddingTop: 10,
+    },
   },
   manageToken: {
     fontFamily: "none",

@@ -7,6 +7,8 @@ import {
   TextField,
   Tooltip,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import useStyles from "./styles/SelectTokenModal.styles";
 import CloseIcon from "@material-ui/icons/Close";
@@ -16,17 +18,16 @@ import eter from "../../../assets/img/eter.png";
 import SelectTokenModalToken from "./SelectTokenModalToken";
 const SelectTokenModal = ({ isOpen, onClose, onChangeToken }) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Modal open={isOpen} onClose={onClose}>
       <Slide in={isOpen} direction="down">
         <Paper className={classes.modal}>
           <div className={classes.topPart}>
             <div>
-              <Typography
-                variant="none"
-                color="primary"
-                className={classes.title}
-              >
+              <Typography color="primary" className={classes.title}>
                 Select a token
               </Typography>
             </div>
@@ -44,27 +45,31 @@ const SelectTokenModal = ({ isOpen, onClose, onChangeToken }) => {
               className={classes.searchInput}
             />
           </div>
-          <div className={classes.commonBasesContainer}>
-            <Typography variant="none" className={classes.commonBasesText}>
-              Common bases
-            </Typography>
-            <Tooltip title="These tokens are commenly paired with others tokens.">
-              <HelpOutlineIcon className={classes.helpOutlineIcon} />
-            </Tooltip>
-          </div>
-          <div className={classes.commenTokenConianer}>
-            {commenToken.map((item) => (
-              <SelectTokenModalCommonToken
-                name={item}
-                imgSrc={eter}
-                key={item}
-                onClick={() => {
-                  onChangeToken(item);
-                  onClose();
-                }}
-              />
-            ))}
-          </div>
+          {!isSmallScreen && (
+            <div className={classes.commonBasesContainer}>
+              <Typography className={classes.commonBasesText}>
+                Common bases
+              </Typography>
+              <Tooltip title="These tokens are commenly paired with others tokens.">
+                <HelpOutlineIcon className={classes.helpOutlineIcon} />
+              </Tooltip>
+            </div>
+          )}
+          {!isSmallScreen && (
+            <div className={classes.commenTokenConianer}>
+              {commenToken.map((item) => (
+                <SelectTokenModalCommonToken
+                  name={item}
+                  imgSrc={eter}
+                  key={item}
+                  onClick={() => {
+                    onChangeToken(item);
+                    onClose();
+                  }}
+                />
+              ))}
+            </div>
+          )}
           <div className={classes.allTokenContainer}>
             {allToken.map((item, index) => (
               <SelectTokenModalToken
