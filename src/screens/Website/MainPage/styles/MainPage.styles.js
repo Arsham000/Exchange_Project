@@ -439,5 +439,17 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 12,
   },
   footerRightPart: {},
+  buttonContainer: {
+    marginTop: 10,
+    marginBottom: 10,
+    textDecoration: "none",
+  },
+  launchButton: {
+    background: "#D10568",
+    borderRadius: "10px !important",
+    color: "rgba(255,255,255,0.9)",
+    paddingTop: "0.6rem",
+    paddingBottom: "0.6rem",
+  },
 }));
 export default useStyles;

@@ -9,6 +9,7 @@ import useStyles from "./styles/MainPage.styles";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   const classes = useStyles();
@@ -26,6 +27,13 @@ const MainPage = () => {
           Swap, earn, and build on the leading decentralized crypto trading
           protocol.
         </Typography>
+        {isSmallScreen && (
+          <Link to="/launch/swap" className={classes.buttonContainer}>
+            <Button variant="contained" className={classes.launchButton}>
+              Launch App
+            </Button>
+          </Link>
+        )}
         <div className={classes.mediaContianer}>
           <IconButton size="small">
             <TwitterIcon className={classes.mediaIcon} />
