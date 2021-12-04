@@ -43,6 +43,11 @@ const SelectTokenModal = ({ isOpen, onClose, onChangeToken }) => {
               variant="outlined"
               placeholder="Search name or paste address"
               className={classes.searchInput}
+              InputProps={{
+                classes: {
+                  input: classes.input,
+                },
+              }}
             />
           </div>
           {!isSmallScreen && (

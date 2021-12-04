@@ -57,22 +57,37 @@ const ConnetWalletModal = ({ isOpen, onClose }) => {
               </div>
               {!isSmallScreen && (
                 <div>
-                  <ConnetWalletModalButton text="Install Metamask" />
+                  <ConnetWalletModalButton
+                    text="Install Metamask"
+                    img="https://app.uniswap.org/static/media/metamask.02e3ec27.png"
+                  />
                 </div>
               )}
               <div>
-                <ConnetWalletModalButton text="Wallet Connect" />
+                <ConnetWalletModalButton
+                  text="Wallet Connect"
+                  img="https://app.uniswap.org/static/media/walletConnectIcon.304e3277.svg"
+                />
               </div>
               {!isSmallScreen && (
                 <div>
-                  <ConnetWalletModalButton text="Coinbase Wallet" />
+                  <ConnetWalletModalButton
+                    text="Coinbase Wallet"
+                    img="https://app.uniswap.org/static/media/walletConnectIcon.304e3277.svg"
+                  />
                 </div>
               )}
               <div>
-                <ConnetWalletModalButton text="Fortmatic" />
+                <ConnetWalletModalButton
+                  text="Fortmatic"
+                  img="https://gblobscdn.gitbook.com/spaces%2F-Lj7HukBJLlR6jbx0-eP%2Favatar.png?alt=media"
+                />
               </div>
               <div>
-                <ConnetWalletModalButton text="Portis" />
+                <ConnetWalletModalButton
+                  text="Portis"
+                  img="https://app.uniswap.org/static/media/portisIcon.f44aba13.png"
+                />
               </div>
             </div>
           </div>

@@ -134,5 +134,13 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "transparent",
     },
   },
+  input: {
+    "&::placeholder": {
+      textOverflow: "ellipsis !important",
+      color: "#fff",
+      fontSize: 14,
+    },
+    color: "rgba(255,255,255,0.7)",
+  },
 }));
 export default useStyles;

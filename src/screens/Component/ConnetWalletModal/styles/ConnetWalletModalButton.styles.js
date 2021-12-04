@@ -22,5 +22,9 @@ const useStyles = makeStyles(() => ({
     margin: 0,
     minWidth: 0,
   },
+  image: {
+    width: 24,
+    height: 24,
+  },
 }));
 export default useStyles;
