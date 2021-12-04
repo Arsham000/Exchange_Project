@@ -18,6 +18,9 @@ const Routes = () => {
       <Route exact path="/launch/swap">
         <Swap />
       </Route>
+      <Route exact path="/launch/index">
+        <Swap />
+      </Route>
       <Route exact path="/launch/pool">
         <Pool />
       </Route>

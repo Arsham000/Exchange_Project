@@ -70,5 +70,24 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     height: "fit-content",
   },
+  moreOptionMenuRoot: {
+    overflow: "hidden",
+    backgroundColor: "rgb(33,36,41)",
+    paddnig: "0px !important",
+    // boxShadow:
+    // "rgb(0 0 0 / 1%) 0 0px 1px, rgb(0 0 0 / 4%) 0 4px 8px, rgb(0 0 0 / 4%) 0 16px 24px, rgb(0 0 0 / 1%) 0 24px 32px;",
+    border: "1px solid rgb(25,27,31)",
+    borderRadius: "12px !important",
+    padding: "0.5rem",
+    height: "100%",
+    color: "#fff",
+  },
+  moreOptionMenu: {
+    top: "48px !important",
+  },
+  moreOptionMenuPaper: {
+    backgroundColor: "transparent",
+    borderRadius: "12px !important",
+  },
 }));
 export default useStyles;
