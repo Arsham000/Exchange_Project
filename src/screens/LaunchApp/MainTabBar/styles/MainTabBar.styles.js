@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "100% 200%",
     boxShadow: "transparent 0 0 0 1px",
     [theme.breakpoints.down("sm")]: {
-      backgroundImage: "linear-gradient(transparent 50%, rgb(255, 27, 31) 50%)",
+      backgroundImage: "linear-gradient(transparent 50%, rgb(33,36,41) 50%)",
       gridTemplateColumns: "48px 1fr",
 
       transition: "background-position 0.1s ease 0s, box-shadow 0.1s ease 0s",

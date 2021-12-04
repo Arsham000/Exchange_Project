@@ -1,11 +1,17 @@
 import { makeStyles } from "@material-ui/core";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: "90%",
+    width: "100%",
     maxWidth: 1340,
     minHeight: "80vh",
     marginBottom: 60,
     padding: "1rem",
+    // paddingRight: "10%",
+    [theme.breakpoints.down("sm")]: {
+      padding: "1rem 0",
+      margin: 20,
+      width: "initial",
+    },
   },
   topPart: {
     display: "flex",
@@ -17,6 +23,9 @@ const useStyles = makeStyles(() => ({
     height: "calc(100vh - 180px)",
     paddingBottom: "3%",
     paddingLeft: 100,
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: 0,
+    },
   },
   topPartTitle: {
     color: "#fff",
@@ -44,12 +53,19 @@ const useStyles = makeStyles(() => ({
     justifyContent: "space-between",
     padding: "4rem 0 8rem",
     marginLeft: "10%",
+    [theme.breakpoints.down("sm")]: {
+      display: "grid",
+      gridTemplateColumns: "1fr",
+    },
   },
   numbersInfo: {
     display: "flex",
     // flex: 1,
     justifyContent: "space-between",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+    },
     // margin: 0,
   },
   numbersPartContianer: {
@@ -59,6 +75,10 @@ const useStyles = makeStyles(() => ({
     // alignItems: "center",
     // justifyContent: "center",
     rowGap: 5,
+    [theme.breakpoints.down("sm")]: {
+      rowGap: 10,
+      alignItems: "center",
+    },
   },
   numbersPartTitle: {
     fontSize: 14,
@@ -75,11 +95,20 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     margin: "2rem 6rem",
     width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      margin: "2rem 0",
+      width: "initial",
+      marginBottom: 50,
+    },
   },
   sectionChild: {
     display: "flex",
     justifyContent: "space-between",
     rowGap: 32,
+    [theme.breakpoints.down("sm")]: {
+      display: "grid",
+      gridTemplateColumns: "1fr",
+    },
   },
   sectionChildTextContianer: {
     display: "grid",
@@ -120,6 +149,23 @@ const useStyles = makeStyles(() => ({
     borderRadius: 24,
     boxShadow:
       "rgb(0 0 0 / 2%) 0 0 1px, rgb(0 0 0 / 2%) 0 4px 8px, rgb(0 0 0 / 2%) 0px 16px 24px, rgb(0 0 0 / 2%) 0 24px 32px",
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+      marginRight: 0,
+      marginBottom: 0,
+      maxWidth: "unset",
+      width: "100%",
+      // alignItems: "center",
+      justifyContent: "flex-start",
+    },
+  },
+  integrationsData: {
+    display: "flex",
+    flexDirection: "column",
+    rowGap: 30,
+    [theme.breakpoints.down("sm")]: {
+      margin: 20,
+    },
   },
   exploreAll: {
     backgroundColor: "rgba(255, 255, 255, 0.1) !important",
@@ -129,7 +175,11 @@ const useStyles = makeStyles(() => ({
   secondSection: {
     display: "flex",
     flexDirection: "column",
-    margin: "2rem 6rem",
+    margin: " 0 0 0 6rem",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      margin: "0",
+    },
   },
   secondSectionTitle: {
     marginBottom: 16,
@@ -142,12 +192,15 @@ const useStyles = makeStyles(() => ({
   },
   secondSectionChildContainer: {
     display: "grid",
-    gridTemplateColumns: "1fr auto",
+    gridTemplateColumns: "2fr 1fr",
     gridTemplateRows: "auto auto",
     rowGap: 32,
     columnGap: 16,
     alignItems: "center",
     width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+    },
   },
   secondSectionLeftChild: {
     display: "grid",
@@ -168,6 +221,9 @@ const useStyles = makeStyles(() => ({
     backgroundRepeat: "no-repeat",
     padding: "1rem",
     borderRadius: 24,
+    [theme.breakpoints.down("sm")]: {
+      width: "initial",
+    },
   },
   secondSectionLeftTopChildTextContianer: {
     marginTop: "20%",
@@ -191,6 +247,9 @@ const useStyles = makeStyles(() => ({
     padding: 0,
     gap: 16,
     alignItems: "flex-end",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   secondSectionRightChild: {
     maxWidth: 375,
@@ -198,8 +257,187 @@ const useStyles = makeStyles(() => ({
     border: "1px solid rgba(255,255,255, 0.19)",
     padding: "2rem",
     borderRadius: 24,
+    marginLeft: "2rem",
     boxShadow:
       "rgb(0 0 0 / 2%) 0 0 1px, rgb(0 0 0 / 2%) 0 4px 8px, rgb(0 0 0 / 2%) 0 16px 24px, rgb(0 0 0 / 2%) 0 24px 32px",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+    },
   },
+  topPartBackgroundImage: {
+    height: "100%",
+    maxHeight: "calc(100vh - 80px)",
+    left: 0,
+    mixBlendMode: "lighten",
+    position: "absolute",
+    top: 0,
+    width: "100%",
+    background: `url(${"https://uniswap.org/images/glimmer_bg.svg"})`,
+    backgroundRepeat: "no-repeat",
+  },
+  topPartBackgroundImageSmall: {
+    mixBlendMode: "lighten",
+    width: "55vw",
+    height: "150%",
+    opacity: 1,
+    position: "absolute",
+    left: 20,
+    top: 20,
+    background: `url(${"https://uniswap.org/images/unicorn_banner.png"})`,
+    backgroundRepeat: "no-repeat",
+  },
+  secondSectionRightTextContianer: {
+    display: "grid",
+    gridAutoRows: "auto",
+    rowGap: 16,
+  },
+  secondSectionRightTextTitle: {
+    maxWidth: 720,
+    lineHeight: "125%",
+    fontWeight: "400",
+    fontSize: 20,
+    textAlign: "left",
+    color: "#fff",
+  },
+  secondSectionRightTextDescription: {
+    fontSize: 20,
+    color: "rgb(135,141,155)",
+    maxWidth: 592,
+    fontWeight: 300,
+  },
+  learnMoreButton: {
+    color: "#fff",
+    backgroundColor: "rgba(255,255,255,0.1)",
+    borderRadius: 12,
+  },
+  thirdSection: {
+    display: "flex",
+    flexDirection: "column",
+    margin: "0 0 0 6rem",
+    width: "96.5%",
+    [theme.breakpoints.down("sm")]: {
+      margin: "2rem 0",
+    },
+  },
+  thirdSectionTitle: {
+    marginBottom: 16,
+    fontSize: 18,
+    overflowWrap: "normal",
+    maxWidth: 900,
+    fontWeight: "normal",
+    cursor: "pointer",
+    color: "#fff",
+  },
+  governanceContianer: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: 32,
+    [theme.breakpoints.down("sm")]: {
+      display: "grid",
+      gridTemplateColumns: "1fr",
+    },
+  },
+  leftPartContianer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    marginBottom: 12,
+    background: `url(${"https://uniswap.org/images/horse-card.png"})`,
+    borderRadius: 24,
+    padding: "2rem",
+    border: "1px solid rgba(255,255,255,0.19)",
+  },
+  leftPartTextContianer: {
+    display: "grid",
+    gridAutoRows: "auto",
+    rowGap: 16,
+    // marginBottom: 100,
+  },
+  leftPartTextTitle: {
+    maxWidth: 960,
+    fontSize: 32,
+    color: "#fff",
+    fontWeight: "inherit",
+  },
+  leftPartTextDescription: {
+    marginBottom: "2 rem",
+    color: "#fff",
+    opacity: 0.8,
+    fontSize: 20,
+    maxWidth: 592,
+    fontWeight: 300,
+  },
+  navRightParts: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  navRightPartContianer: {
+    width: "100%",
+    borderRadius: 20,
+    marginBottom: 12,
+    cursor: "pointer",
+    height: "fit-content",
+    outline: "none",
+    padding: 20,
+    background: "rgba(255,255,255,0.02)",
+    border: "1px solid rgba(255,255,255,0.13)",
+    textAlign: "left",
+    transition: "color .2s ease-in-out",
+    [theme.breakpoints.down("sm")]: {
+      width: "initial",
+    },
+  },
+  navRightPartTitle: {
+    marginBottom: 12,
+    maxWidth: 720,
+    lineHeight: "125%",
+    fontWeight: 400,
+    fontSize: 20,
+    textAlign: "left",
+    color: "#B3B3B4",
+  },
+  navRightPartDescription: {
+    textAlign: "left",
+    margin: 0,
+    // opacity: 0.6,
+    fontSize: 16,
+    fontWeight: 400,
+    color: "#636467",
+  },
+  footer: {
+    width: "100%",
+    columnGap: 16,
+    display: "flex",
+    flexDirection: "row",
+    marginLeft: "6rem",
+    marginRight: 0,
+    position: "relative",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 100,
+    marginBottom: -48,
+    height: "100%",
+    [theme.breakpoints.down("sm")]: {
+      alignItems: "flex-end",
+      marginBottom: 0,
+      marginLeft: 0,
+    },
+  },
+  footerLeftPart: {
+    display: "flex",
+    flexDirection: "row",
+    marginRight: 48,
+    columnGap: 32,
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      rowGap: 10,
+      marginRight: 0,
+    },
+  },
+  footerLeftPartText: {
+    color: "#fff",
+    fontSize: 12,
+  },
+  footerRightPart: {},
 }));
 export default useStyles;

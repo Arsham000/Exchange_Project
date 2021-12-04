@@ -1,4 +1,4 @@
-import { Button, Typography } from "@material-ui/core";
+import { Button, Typography, useMediaQuery, useTheme } from "@material-ui/core";
 import AppIcon from "@material-ui/icons/Polymer";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
@@ -6,25 +6,31 @@ import useStyles from "./styles/WebsiteTabBar.styles";
 
 const WebsiteTabBar = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <header className={classes.header}>
       <div className={classes.root}>
         <div>
           <AppIcon />
         </div>
-        <nav className={classes.navContainer}>
-          <NavPart name="Ecosystem" />
-          <NavPart name="Community" />
-          <NavPart name="Governance" />
-          <NavPart name="Developers" />
-          <NavPart name="Blog" />
-          <NavPart name="FAQ" />
-          <a href="/launch/#/swap">
-            <Button variant="contained" className={classes.button}>
-              Launch App
-            </Button>
-          </a>
-        </nav>
+        {!isSmallScreen ? (
+          <nav className={classes.navContainer}>
+            <NavPart name="Ecosystem" />
+            <NavPart name="Community" />
+            <NavPart name="Governance" />
+            <NavPart name="Developers" />
+            <NavPart name="Blog" />
+            <NavPart name="FAQ" />
+            <Link to="/launch/swap" className={classes.buttonContainer}>
+              <Button variant="contained" className={classes.button}>
+                Launch App
+              </Button>
+            </Link>
+          </nav>
+        ) : (
+          <Button className={classes.menuButton}>Menu</Button>
+        )}
       </div>
     </header>
   );

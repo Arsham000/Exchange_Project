@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useStyles from "./styles/TabList.styles";
 
 const TabList = () => {
