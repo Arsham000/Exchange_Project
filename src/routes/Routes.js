@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import MainTabBar from "../screens/LaunchApp/MainTabBar/MainTabBar";
 import Pool from "../screens/LaunchApp/Pool/Pool";
 import Swap from "../screens/LaunchApp/Swap/Swap";
@@ -8,10 +8,8 @@ import WebsiteTabBar from "../screens/Website/WebsiteTabBar/WebsiteTabBar";
 const Routes = () => {
   return (
     <>
-      <Route path="/website">
+      <Route path="/index">
         <WebsiteTabBar />
-      </Route>
-      <Route exact path="/website/mainpage">
         <MainPage />
       </Route>
       <Route path="/launch">
@@ -26,6 +24,7 @@ const Routes = () => {
       <Route exact path="/launch/vote">
         <Vote />
       </Route>
+      <Redirect to="index" push />
     </>
   );
 };
