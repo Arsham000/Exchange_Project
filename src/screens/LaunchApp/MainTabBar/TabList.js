@@ -25,7 +25,7 @@ function Tab({ name, isActive, setactive, index }) {
   return (
     <Link
       className={[classes.tab, isActive ? classes.activeTab : ""].join(" ")}
-      to={`/launch/${name}`}
+      to={`/launch/${name.toLowerCase()}`}
       onClick={() => setactive(index)}
     >
       <Typography>{name}</Typography>

@@ -4,7 +4,14 @@ import eter from "../../../assets/img/eter.png";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import SelectTokenModal from "../../Component/SelectTokenModal/SelectTokenModal";
 import { useState } from "react";
-const SwapInput = ({ value, onChangeValue, tokenName, onChangeToken }) => {
+const SwapInput = ({
+  value,
+  onChangeValue,
+  tokenName,
+  onChangeToken,
+  imageToken,
+  setimageToken,
+}) => {
   const classes = useStyles();
   const [selectTokenModalIsOpen, setselectTokenModalIsOpen] = useState(false);
   return (
@@ -16,7 +23,13 @@ const SwapInput = ({ value, onChangeValue, tokenName, onChangeToken }) => {
             tokenName ? classes.buttonSelected : classes.buttonNotSelected
           }
         >
-          {tokenName && <img alt="ETH" src={eter} className={classes.image} />}
+          {tokenName && (
+            <img
+              alt="ETH"
+              src={imageToken ? imageToken : eter}
+              className={classes.image}
+            />
+          )}
           <div>{tokenName || "Select a Token"}</div>
           <KeyboardArrowDownIcon />
         </Button>
@@ -38,6 +51,7 @@ const SwapInput = ({ value, onChangeValue, tokenName, onChangeToken }) => {
         isOpen={selectTokenModalIsOpen}
         onClose={() => setselectTokenModalIsOpen(false)}
         onChangeToken={onChangeToken}
+        setimageToken={setimageToken}
       />
     </div>
   );

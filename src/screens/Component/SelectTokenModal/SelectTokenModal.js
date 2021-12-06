@@ -16,7 +16,12 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import SelectTokenModalCommonToken from "./SelectTokenModalCommonToken";
 import eter from "../../../assets/img/eter.png";
 import SelectTokenModalToken from "./SelectTokenModalToken";
-const SelectTokenModal = ({ isOpen, onClose, onChangeToken }) => {
+const SelectTokenModal = ({
+  isOpen,
+  onClose,
+  onChangeToken,
+  setimageToken,
+}) => {
   const classes = useStyles();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -69,6 +74,9 @@ const SelectTokenModal = ({ isOpen, onClose, onChangeToken }) => {
                   key={item}
                   onClick={() => {
                     onChangeToken(item);
+                    // here set token img url , i used fake data but you should set only url without any condition
+                    setimageToken(item.url ? item.url : "");
+
                     onClose();
                   }}
                 />
@@ -84,6 +92,8 @@ const SelectTokenModal = ({ isOpen, onClose, onChangeToken }) => {
                 key={item.token + index.toString()}
                 onClick={() => {
                   onChangeToken(item.token);
+                  // here set token img url , i used fake data but you should set only url without any condition
+                  setimageToken(item.url ? item.url : "");
                   onClose();
                 }}
               />

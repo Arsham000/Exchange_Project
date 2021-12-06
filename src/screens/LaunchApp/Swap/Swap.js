@@ -20,15 +20,21 @@ const Swap = () => {
   const [firstInputToken, setfirstInputToken] = useState("ETH");
   const [secondInputToken, setsecondInputToken] = useState("");
   const [secondInputValue, setsecondInputValue] = useState("");
+  const [firstImageToken, setfirstImageToken] = useState("");
+  const [secondImageToken, setsecondImageToken] = useState("");
   const handleSwap = () => {
     const token1 = firstInputToken;
     const token2 = secondInputToken;
+    const imageToken1 = firstImageToken;
+    const imageToken2 = secondImageToken;
     const value1 = fistInputValue;
     const value2 = secondInputValue;
     setsecondInputValue(value1);
     setfistInputValue(value2);
     setsecondInputToken(token1);
     setfirstInputToken(token2);
+    setfirstImageToken(imageToken1);
+    setsecondImageToken(imageToken2);
   };
 
   return (
@@ -60,6 +66,8 @@ const Swap = () => {
             onChangeValue={setfistInputValue}
             tokenName={firstInputToken}
             onChangeToken={setfirstInputToken}
+            imageToken={firstImageToken}
+            setimageToken={setfirstImageToken}
           />
           <IconButton className={classes.swapIconButton} onClick={handleSwap}>
             <ArrowDownwardIcon className={classes.swapIcon} />
@@ -69,6 +77,8 @@ const Swap = () => {
             onChangeValue={setsecondInputValue}
             tokenName={secondInputToken}
             onChangeToken={setsecondInputToken}
+            imageToken={secondImageToken}
+            setimageToken={setsecondImageToken}
           />
           <Button
             fullWidth
